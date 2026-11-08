@@ -4,18 +4,21 @@ nav{display:flex;gap:14px;font-size:15px}a{color:#0F7B6C}
 @media (prefers-color-scheme:dark){body{background:#0E1613;color:#E4EDE7}a{color:#3CC4AA}}</style></head><body><main><nav><strong>English</strong> · <a href="../ru/privacy/">Русский</a></nav>
 <h1>Vesicle Privacy Policy</h1>
 <p>Effective date: November 8, 2026</p>
-<p>Vesicle is a one-to-one messenger without a message server. This policy explains what the app does with your data. The short answer: we do not collect it.</p>
+<p>Vesicle is a one-to-one messenger without a message server. This policy explains what the app does with your data. The short answer: we do not collect it, and our small service sees only what is listed below.</p>
 <h2>What we collect</h2>
 <p>Nothing. Vesicle has no accounts, no phone numbers and no sign-up. The app contains no analytics, no advertising and no tracking, and it does not send crash reports or usage data to us or to anyone else.</p>
 <h2>Your messages and contacts</h2>
-<p>A contact is added only in person, by scanning a QR code for that one pair. Each pair has its own keys, created on your devices. Messages, contacts and history are stored only on your device. Vesicle never uploads your address book.</p>
+<p>A contact is added only in person, by scanning a QR code for that one pair. The camera is used only to read that code; no images are stored or sent. Your device name is not shared with your contact: each person names their own contacts. Each pair has its own keys, created on your devices. Messages, contacts and history are stored only on your device. Vesicle never uploads your address book.</p>
 <h2>How messages travel</h2>
 <p>There is no message server. A message is sealed into a capsule that only the recipient can open, and it travels to the recipient through the devices of other Vesicle users. Those devices can see only the sealed capsule: who it is for, how long it lives and how large it is. They cannot read the text, see your keys or learn your contacts.</p>
+<p>Nearby devices find each other over Wi-Fi and Bluetooth (this is why the app asks for local network access); over the internet, devices connect directly only with your own contacts.</p>
 <p>Using Vesicle means your device also carries other people's sealed capsules. In the settings you choose how much storage and battery this may use. You cannot read what you carry.</p>
-<h2>Notifications</h2>
-<p>When someone writes to you while Vesicle is closed, a small notification gateway can send a visible notification asking you to open the app. Your message never passes through the gateway. The gateway sees only that a device was asked to wake up. The notification itself does not contain the message text or the sender's name. The app adds the contact's name locally if you allow it in settings. Vesicle never uses silent notifications.</p>
+<h2>Rendezvous service and doorbell</h2>
+<p>A small service helps two of your devices on different networks find each other. It runs on Yandex Cloud, with a fallback on Cloudflare. Your messages never pass through it.</p>
+<p>- <strong>Rendezvous.</strong> A device leaves a note saying "I am at this address now", encrypted with your pair's key, so the service cannot read it. The note lives for 5 minutes. The service sees the IP address and time of each request but does not store them in the note. - <strong>Doorbell.</strong> When someone writes to you while Vesicle is closed, the service sends a visible "New message" notification through the Apple Push Notification service. To do this it stores your device's push token under a separate label for each pair, if "Doorbell" is on in settings. So the service may know how many pairs a device has and who rings whom, but not names, text or keys. Turn the doorbell off or delete a pair and the registration is removed.</p>
+<p>The notification does not contain the message text or the sender's name. Adding the contact's name on the phone itself will come later. Vesicle never uses silent notifications.</p>
 <h2>Test builds</h2>
-<p>The current test build shows the capsule network in a simulation on your device and does not yet send messages over the internet. This policy will be updated before that changes.</p>
+<p>Test builds send real messages as described above. They may include a simulation mode that runs only on your device and sends nothing.</p>
 <h2>Children</h2>
 <p>Vesicle is not directed at children under 13.</p>
 <h2>Changes and contact</h2>
